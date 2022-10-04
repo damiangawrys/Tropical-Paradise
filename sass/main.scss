@@ -82,7 +82,7 @@ body {
 	height: 100vh;
 	width: 100%;
 	transform: translateX(100%);
-	transition: .5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 	background-image: $blue-gradient-solid;
 	z-index: 100;
 
@@ -108,7 +108,7 @@ body {
 			transform: scaleY(0);
 			background-color: $pure-white;
 			content: '';
-			transition: transform .3s;
+			transition: transform 0.3s;
 		}
 
 		&:hover::before {
@@ -219,11 +219,69 @@ body {
 	}
 }
 
+//ISLAND
+
+.islands {
+	&__card {
+		position: relative;
+		margin: 1em 0;
+		height: 450px;
+		color: $pure-white;
+		text-align: center;
+		perspective: 1000px;
+
+		&:hover {
+			.islands__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.islands__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			padding: 2em;
+			height: 100%;
+			border-radius: 8px;
+			background-size: cover;
+			transition: transform 1s, opacity 1s;
+
+			&--first {
+				background-image: $light-blue-gradient, url(../img/boat1.jpg);
+			}
+			&--second {
+				background-image: $blue-gradient, url(../img/hawaii1.jpg);
+			}
+			&--third {
+				background-image: $purple-gradient, url(../img/water1.jpg);
+			}
+
+			&-title {
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
+			}
+
+			&-info {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: 1.8rem;
+
+				i {
+					margin-right: 0.3em;
+				}
+			}
+		}
+	}
+}
+
 //==================================
 //MEDIA
 //==================================
 
-@media(min-width: 576px) {
+@media (min-width: 576px) {
 	.dreams {
 		&__box {
 			flex-direction: row;
@@ -252,7 +310,6 @@ body {
 		}
 	}
 }
-
 
 @media (min-width: 768px) {
 	.white-block {
