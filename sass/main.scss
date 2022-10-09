@@ -290,7 +290,6 @@ body {
 			transform: rotateY(180deg);
 			transition: transform 1s, opacity 1s;
 
-
 			&-title {
 				@include islandCardStyle;
 				top: 1.2em;
@@ -330,6 +329,67 @@ body {
 			}
 		}
 	}
+}
+
+//OFFERS
+
+.offers {
+	position: relative;
+
+	@include heroImages('../img/maledives-small.jpg');
+	overflow: hidden;
+
+	.section-heading {
+		color: $pure-white;
+	}
+
+	&__option {
+		margin: 1em 0;
+		box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+		background-color: $pure-white;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&-info {
+			padding: 2em;
+		}
+
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 2.4rem;
+			font-weight: 300;
+		}
+
+		&-text {
+			margin-bottom: 0.5em;
+			font-size: 1.3rem;
+			color: $dark;
+		}
+
+		&-btn {
+			margin-top: 1em;
+			padding: 0.8em;
+			width: 100%;
+			color: $pure-white;
+			background-color: $main-color;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+
+			&::before {
+				background-color: $secondary-color;
+			}
+		}
+	}
+
 }
 
 //==================================
@@ -475,7 +535,7 @@ body {
 	}
 }
 
-@media(min-width: 1100px) {
+@media (min-width: 1100px) {
 	.islands {
 		&__card {
 			width: 30%;
