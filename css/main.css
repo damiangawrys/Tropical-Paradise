@@ -195,11 +195,11 @@ body {
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
   background-color: #fff;
-  content: "";
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
+  content: "";
 }
 .nav__item:hover::before {
   -webkit-transform: scaleY(1);
@@ -232,6 +232,12 @@ body {
           animation: navItemsAnimation 1s both;
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+  background-color: #2e2e2e;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -251,7 +257,7 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/hero-small.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/header-mini.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -305,7 +311,7 @@ body {
 .hero-img {
   position: relative;
   padding: 10em 2em;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/haiti-small.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/hero-mini.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -352,13 +358,13 @@ body {
   transition: transform 1s, opacity 1s, -webkit-transform 1s;
 }
 .islands__card-img--first {
-  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url(../img/boat1.jpg);
+  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url("../img/island1.jpg");
 }
 .islands__card-img--second {
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url(../img/hawaii1.jpg);
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/island2.jpg");
 }
 .islands__card-img--third {
-  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75)), url(../img/water1.jpg);
+  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75)), url("../img/island3.jpg");
 }
 .islands__card-img-title {
   font-family: "Dancing Script", cursive;
@@ -440,7 +446,7 @@ body {
 
 .offers {
   position: relative;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/maledives-small.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/offer-mini.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -565,14 +571,14 @@ body {
 }
 .contact__form-input {
   margin-bottom: 2em;
-  padding: 0.6 em 1.2em;
+  padding: 0.6em 1.2em;
   border: none;
   border-radius: 8px;
   font-size: 1.6rem;
 }
 .contact__form-textarea {
   margin-bottom: 2em;
-  padding: 0.6 em 1.2em;
+  padding: 0.6em 1.2em;
   border: none;
   border-radius: 8px;
   font-size: 1.6rem;
@@ -595,6 +601,46 @@ body {
 }
 .contact__form-btn::before {
   background-color: #164dcc;
+}
+
+.footer {
+  color: #fff;
+  background-color: #2e2e2e;
+}
+.footer .wrapper {
+  padding: 6em 2em 2em;
+}
+.footer__box {
+  font-size: 1.4rem;
+}
+.footer__box-desktop {
+  display: none;
+}
+.footer__box-title {
+  margin-bottom: 1em;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.footer__box-social {
+  margin: 2em 0 1em;
+}
+.footer__box-link {
+  padding: 0 0.3em;
+  font-size: 3.6rem;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.footer__box-link:first-child {
+  padding-left: 0;
+}
+.footer__box-link:hover {
+  color: #eee;
+}
+.footer__bottom-text {
+  padding: 2em;
+  text-align: center;
 }
 
 @media (min-width: 576px) {
@@ -702,6 +748,37 @@ body {
     margin: 1em;
     width: 45%;
   }
+  .footer__boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer__box-desktop {
+    display: block;
+  }
+  .footer__box {
+    margin: 0 2em;
+    width: 25%;
+  }
+  .footer__box:first-child {
+    width: 50%;
+  }
+  .footer__box-title {
+    font-size: 2.4rem;
+  }
+  .footer__box-list {
+    list-style: none;
+  }
+  .footer__box-list-item {
+    margin-bottom: 1em;
+  }
+  .footer__box-list-item a {
+    color: #eee;
+    text-decoration: none;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -709,7 +786,7 @@ body {
     right: 50px;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url(../img/hero-big.jpg);
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/header-big.jpg");
   }
   .header__heading {
     font-size: 10rem;
@@ -741,7 +818,7 @@ body {
   }
   .hero-img {
     padding: 40rem 2em;
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url(../img/haiti-big.jpg);
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/hero-big.jpg");
   }
   .hero-img__title {
     font-size: 7.2rem;
@@ -751,7 +828,7 @@ body {
     max-width: 900px;
   }
   .offers {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/maldives-gcb3acd2af_1920.jpg");
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/offer-big.jpg");
   }
   .offers__option-img {
     -o-object-fit: cover;
